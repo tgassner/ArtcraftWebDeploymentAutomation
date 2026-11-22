@@ -3,6 +3,7 @@ import pathlib
 import shutil
 import zipfile
 import requests
+import datetime
 
 # === Global standards for all Artcraft projects ===
 OWNER = "storytold"
@@ -25,6 +26,10 @@ PROJECT_REPOS = [
     "wordcraft",
     "gridcraft",
     "deckcraft",
+    "craft-anything",
+    "anicraft",
+    "texturecraft",
+    "materialcraft",
 ]
 
 
@@ -133,10 +138,10 @@ def cleanup_old_releases(base_dir, keep=3):
 
 
 if __name__ == "__main__":
-  print("=== Starting automatic Artcraft deployment run ===")
+  print(f"=== Starting automatic Artcraft deployment run {datetime.datetime.now():%d.%m.%Y %H:%M:%S} ===")
   for repo in PROJECT_REPOS:
     try:
       check_and_deploy(repo)
     except Exception as e:
       print(f"  [Fatal Error] Failed for {repo}: {e}")
-  print("=== Run finished ===")
+  print("=== Run finished {datetime.datetime.now():%d.%m.%Y %H:%M:%S} ===")
