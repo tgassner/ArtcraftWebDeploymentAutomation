@@ -144,4 +144,4 @@ if __name__ == "__main__":
       check_and_deploy(repo)
     except Exception as e:
       print(f"  [Fatal Error] Failed for {repo}: {e}")
-  print("=== Run finished {datetime.datetime.now():%d.%m.%Y %H:%M:%S} ===")
+  print(f"=== Run finished {datetime.datetime.now():%d.%m.%Y %H:%M:%S} ===")
